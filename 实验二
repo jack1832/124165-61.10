@@ -1,0 +1,85 @@
+#include<iostream>
+using namespace std;
+#include<math.h>
+void qiugen(double a, double b,double c)
+{
+	double e, d;
+	cin >> a >> b >> c;
+	d = sqrt(b * b - 4 * a * c);
+	if (d>0)
+	{
+		cout << "根为" << (-b + 4 * d) / -2 * a << "和" << (-b - 4 * d) / -2 * a << endl;
+	}
+	else if (d == 0)
+	{
+		printf("根为%lf/n", b / 2 * a);
+		cout << "根为" << b / 2 * a << endl;
+	}
+	else
+	{
+		cout << "无根"<<endl;
+	}
+}
+void mianji(double a, double b, double c)
+{
+	cin >> a >> b >> c;
+	double S;
+	double d = (a + b + c) / 2;
+	cout << "面积为" << sqrt(d * (d - a) * (d - b) * (d - c)) << endl;
+}
+void riqi(int a,int b,int c)
+{
+	int d, e,f;
+	f = 0;
+	cin >> a >> b >> c;
+	if ((a%4==0&&a%100!=0)||(a%400==0))
+	{
+		switch (b)
+		{
+		case 1:f = c; break;
+		case 2:f = 31 + c; break;//前一月
+		case 3:f = 60 + c; break;//前二月
+		case 4:f = 91 + c; break;//前三月
+		case 5:f = 121 + c; break;//4
+		case 6:f = 152 + c; break;//5
+		case 7:f = 182 + c; break;
+		case 8:f = 213 + c; break;
+		case 9:f = 244 + c; break;
+		case 10:f = 274 + c; break;
+		case 11:f = 305 + c; break;
+		case 12:f = 335 + c; break;
+		default:
+			break;
+		}
+	}
+	else
+	{
+		switch (b)
+		{
+		case 1:f = c; break;
+		case 2:f = 31 + c; break;//前一月
+		case 3:f = 59 + c; break;//前二月
+		case 4:f = 90+ c; break;//前三月
+		case 5:f = 120 + c; break;//4
+		case 6:f = 155 + c; break;//5
+		case 7:f = 181 + c; break;
+		case 8:f = 212 + c; break;
+		case 9:f = 243 + c; break;
+		case 10:f = 273 + c; break;
+		case 11:f = 304 + c; break;
+		case 12:f = 334 + c; break;
+		default:
+			break;
+		}
+	}
+	d = (f / 7)+1; e = f % 7;
+	cout << "第" << d << "周第" << e << "天";
+}
+int main()
+{
+	double a=0, b=0, c=0, d, e;
+	qiugen(a,b,c);
+	mianji(a,  b,  c);
+	riqi(a, b, c);
+	getchar();
+}
